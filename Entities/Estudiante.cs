@@ -14,7 +14,7 @@ namespace Boletin.Entities
         public Estudiante() : base()
         {
         }
-        public Estudiante(List<double> quices, List<double> trabajos, List<double> parciales, string code, string nombre, string direccion, byte edad) : base(quices, trabajos, parciales)
+        public Estudiante(List<float> quices, List<float> trabajos, List<float> parciales, string code, string nombre, string direccion, byte edad) : base(quices, trabajos, parciales)
         {
             this.Code = code;
             this.Nombre = nombre;
@@ -58,9 +58,9 @@ namespace Boletin.Entities
             }
             Console.Write("Ingrese La Direccion: ");
             estudiante.Direccion = Console.ReadLine();
-            estudiante.Quices = new List<double>();
-            estudiante.Trabajos = new List<double>();
-            estudiante.Parciales = new List<double>();
+            estudiante.Quices = new List<float>();
+            estudiante.Trabajos = new List<float>();
+            estudiante.Parciales = new List<float>();
             estudiantes.Add(estudiante);}
             catch (Exception)
             {
@@ -92,7 +92,7 @@ namespace Boletin.Entities
             {
                 case 1:
                     Console.WriteLine("Quiz Nro {0}: ", (alumno.Quices.Count + 1));
-                    alumno.Quices.Add(double.Parse(Console.ReadLine()));
+                    alumno.Quices.Add(float.Parse(Console.ReadLine()));
                     break;
                 case 2:
                     Console.WriteLine("Trabajo Nro {0}: ", (alumno.Trabajos.Count + 1));

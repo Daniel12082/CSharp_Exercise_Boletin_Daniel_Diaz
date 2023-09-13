@@ -1,0 +1,17 @@
+[
+  {
+    "Code": "123",
+    "Nombre": "Johlver",
+    "Direccion": "djhgf",
+    "Edad": 23,
+    "Quices": [
+      5.0
+    ],
+    "Trabajos": [
+      4.4
+    ],
+    "Parciales": [
+      4.0
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cNNDJW2e7xNN17377eKnt6djm46k/+ULW73HpjF/roLcrO90ZWAEkns5O7h01lYbuuWlhUvstkef9j2F2OkO1w==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\sobri\\Documents\\Boletin\\Boletin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sobri\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

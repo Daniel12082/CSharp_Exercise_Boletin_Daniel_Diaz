@@ -1,17 +1,34 @@
 [
   {
     "Code": "123",
-    "Nombre": "Johlver",
-    "Direccion": "djhgf",
-    "Edad": 23,
+    "Nombre": "Daniel",
+    "Direccion": "Calle",
+    "Edad": 25,
     "Quices": [
-      5.0
+      50.0,
+      2.5,
+      3.5,
+      4.8
     ],
     "Trabajos": [
-      4.4
+      4.5,
+      2.9000000953674316
     ],
     "Parciales": [
-      4.0
+      4.199999809265137,
+      2.200000047683716,
+      2.9000000953674316
     ]
+  },
+  {
+    "Code": "1096701029",
+    "Nombre": "DANIEL CARLOS",
+    "Direccion": "Calle 15",
+    "Edad": 0,
+    "Quices": [
+      2.5
+    ],
+    "Trabajos": [],
+    "Parciales": []
   }
 ]

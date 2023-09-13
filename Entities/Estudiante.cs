@@ -14,7 +14,7 @@ namespace Boletin.Entities
         public Estudiante() : base()
         {
         }
-        public Estudiante(List<float> quices, List<float> trabajos, List<float> parciales, string code, string nombre, string direccion, byte edad) : base(quices, trabajos, parciales)
+        public Estudiante(List<double> quices, List<double> trabajos, List<double> parciales, string code, string nombre, string direccion, byte edad) : base(quices, trabajos, parciales)
         {
             this.Code = code;
             this.Nombre = nombre;
@@ -30,33 +30,57 @@ namespace Boletin.Entities
         public byte Edad { get => edad; set => edad = value; }
         public void InfoEstudiante(List<Estudiante> estudiantes)
         {
+            try{
             Estudiante estudiante = new Estudiante();
-            Console.Write("Codigo: ");
+            Console.Clear();
+            Console.WriteLine("Registro de Estudiantes");
+            Console.WriteLine("Ingrese el codigo del estudiante: ");
             Code = Console.ReadLine();
             ValidateCode(estudiantes, Code);
             while(ValidateCode(estudiantes, Code))
             {
                 Console.WriteLine("El codigo ya existe, por favor ingrese otro");
+                Console.WriteLine("Presione una tecla para continuar...");
+                Console.ReadKey();
                 Console.Clear();
                 Console.Write("Codigo: ");
                 Code = Console.ReadLine();
                 ValidateCode(estudiantes, Code);
             }
             estudiante.Code = Code;
-            Console.Write("Nombre: ");
-            estudiante.Nombre = Console.ReadLine();
-            Console.Write("Direccion: ");
+            Console.Write("Ingrese El Nombre: ");
+            estudiante.Nombre = Console.ReadLine().ToUpper();
+            Console.Write("Ingrese La Edad: ");
+            while(!ValidateAge(Convert.ToByte(Console.ReadLine())))
+            {
+                Console.WriteLine("Ingrese una edad valida(10-110)");
+                Console.Write("Ingrese La Edad: ");
+            }
+            Console.Write("Ingrese La Direccion: ");
             estudiante.Direccion = Console.ReadLine();
-            Console.Write("Edad: ");
-            estudiante.Edad = Convert.ToByte(Console.ReadLine());
-            estudiante.Quices = new List<float>();
-            estudiante.Trabajos = new List<float>();
-            estudiante.Parciales = new List<float>();
-            estudiantes.Add(estudiante);
+            estudiante.Quices = new List<double>();
+            estudiante.Trabajos = new List<double>();
+            estudiante.Parciales = new List<double>();
+            estudiantes.Add(estudiante);}
+            catch (Exception)
+            {
+                Console.WriteLine("Error Dato Invalido presione una tecla para continuar:");
+                Console.ReadKey();
+            }
         }
         public static bool ValidateCode(List<Estudiante> estudiantes, string code)
         {
             return estudiantes.Any(x => x.Code.Equals(code));
+        }
+        public static bool ValidateAge(byte edad){
+            if (edad >= 10 && edad <= 110)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public void RegistroNota(List<Estudiante> estudiantes, int opcion)
         {
@@ -68,7 +92,7 @@ namespace Boletin.Entities
             {
                 case 1:
                     Console.WriteLine("Quiz Nro {0}: ", (alumno.Quices.Count + 1));
-                    alumno.Quices.Add(float.Parse(Console.ReadLine()));
+                    alumno.Quices.Add(double.Parse(Console.ReadLine()));
                     break;
                 case 2:
                     Console.WriteLine("Trabajo Nro {0}: ", (alumno.Trabajos.Count + 1));

@@ -9,8 +9,9 @@ internal class Program
         Estudiante student = new Estudiante();
         bool cicloMenu = true;
         estudiantes = MisFunciones.LoadData();
-        while (cicloMenu)
+            while (cicloMenu)
         {
+            try{
             Console.Clear();
             Console.WriteLine("1. Registro de estudiantes");
             Console.WriteLine("2. Registro de notas");
@@ -53,7 +54,7 @@ internal class Program
                         {
                             case 1:
                                 Console.Clear();
-                                MisFunciones.ImprimirNotas(estudiantes);
+                                MisFunciones.ImprimirNotas();
                                 break;
                             case 2:
                                 Console.Clear();
@@ -93,6 +94,11 @@ internal class Program
                     Console.Write("Presione Enter para volver a ingresar: ");
                     Console.ReadKey();
                     break;
+            }
+            }catch(Exception ){
+                Console.WriteLine("Error Valor invalido:");
+                Console.Write("Presione Enter para volver a ingresar: ");
+                Console.ReadKey();
             }
         }
     }

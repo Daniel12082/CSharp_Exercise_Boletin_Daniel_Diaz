@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\APM02-042\\Documents\\Ejer01CSharpRemaster\\Boletin.csproj": {}
+    "C:\\Users\\sobri\\Documents\\Ejer01CSharpRemaster\\Boletin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\APM02-042\\Documents\\Ejer01CSharpRemaster\\Boletin.csproj": {
+    "C:\\Users\\sobri\\Documents\\Ejer01CSharpRemaster\\Boletin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\APM02-042\\Documents\\Ejer01CSharpRemaster\\Boletin.csproj",
+        "projectUniqueName": "C:\\Users\\sobri\\Documents\\Ejer01CSharpRemaster\\Boletin.csproj",
         "projectName": "Boletin",
-        "projectPath": "C:\\Users\\APM02-042\\Documents\\Ejer01CSharpRemaster\\Boletin.csproj",
-        "packagesPath": "C:\\Users\\APM02-042\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\APM02-042\\Documents\\Ejer01CSharpRemaster\\obj\\",
+        "projectPath": "C:\\Users\\sobri\\Documents\\Ejer01CSharpRemaster\\Boletin.csproj",
+        "packagesPath": "C:\\Users\\sobri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sobri\\Documents\\Ejer01CSharpRemaster\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\APM02-042\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\sobri\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"

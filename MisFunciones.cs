@@ -99,17 +99,12 @@ public class MisFunciones
     }
     public static float CalcularNotaFinal(List<float> quices, List<float> trabajos, List<float> parciales)
     {
-        // Pesos para los componentes de la nota
-        float pesoQuices = 0.25f;     // 40%
-        float pesoTrabajos = 0.15f;   // 20%
-        float pesoParciales = 0.60f;  // 40%
-
-        // Asegurarse de que haya 4 quices, 2 trabajos y 3 parciales
+        float pesoQuices = 0.25f;
+        float pesoTrabajos = 0.15f;
+        float pesoParciales = 0.60f;
         float sumaQuices = quices.Take(4).DefaultIfEmpty(0.0f).Sum();
         float sumaTrabajos = trabajos.Take(2).DefaultIfEmpty(0.0f).Sum();
         float sumaParciales = parciales.Take(3).DefaultIfEmpty(0.0f).Sum();
-
-        // Calcular la nota final
         float notaFinal = (sumaQuices * pesoQuices) + (sumaTrabajos * pesoTrabajos) + (sumaParciales * pesoParciales);
         return notaFinal;
     }
@@ -126,5 +121,7 @@ public class MisFunciones
             Console.WriteLine("| {0,-20} | {1,-40} | {2,-7} |", estudiante.Code, estudiante.Nombre, notaFinal.ToString());
         }
         Console.WriteLine("------------------------------------------------------------------");
+        Console.WriteLine("Presione Enter para continuar...");
+        Console.ReadKey();
     }
 }

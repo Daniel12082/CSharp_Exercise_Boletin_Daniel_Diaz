@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Permissions;
 using System.Threading.Tasks;
 namespace Boletin.Entities
@@ -247,6 +248,66 @@ namespace Boletin.Entities
                 MisFunciones.SaveData(estudiantes);
             }
         }
+        public void FindStudentid(List<Estudiante> estudiantes){
+        Console.Clear();
+        Console.WriteLine("Ingrese el Codigo del Estudiante a Buscar");
+        string id = Console.ReadLine();
+        Estudiante studentToFind = estudiantes.FirstOrDefault(st => (st.Code ?? string.Empty)
+        .Equals(id)) ?? new Estudiante();
+        if (studentToFind != null)
+        {
+            Console.WriteLine("Codigo: {0}", studentToFind.Code);
+            Console.WriteLine("Nombre: {0}", studentToFind.Nombre);
+            Console.WriteLine("Edad: {0}", studentToFind.Edad);
+            Console.WriteLine("Direccion: {0}", studentToFind.Direccion);
+            Console.WriteLine("Quices: {0}", studentToFind.Quices);
+            Console.WriteLine("Trabajos: {0}", studentToFind.Trabajos);
+            Console.WriteLine("Parciales: {0}", studentToFind.Parciales);
+            Console.ReadKey();
+        }
     }
-
+    public void FindStudentName(List<Estudiante> estudiantes){
+        Console.Clear();
+        Console.WriteLine("Ingrese el Nombre del Estudiante a Buscar");
+        string name = Console.ReadLine().ToUpper();
+        Estudiante studentToFind = estudiantes.FirstOrDefault(st => (st.Nombre ?? string.Empty)
+        .Equals(name)) ?? new Estudiante();
+        if (studentToFind != null)
+        {
+            Console.WriteLine("Codigo: {0}", studentToFind.Code);
+            Console.WriteLine("Nombre: {0}", studentToFind.Nombre);
+            Console.WriteLine("Edad: {0}", studentToFind.Edad);
+            Console.WriteLine("Direccion: {0}", studentToFind.Direccion);
+            Console.WriteLine("Quices: {0}", studentToFind.Quices);
+            Console.WriteLine("Trabajos: {0}", studentToFind.Trabajos);
+            Console.WriteLine("Parciales: {0}", studentToFind.Parciales);
+            Console.ReadKey();
+        }
+    }
+    public void FindStudentsAges(List<Estudiante> estudiantes){
+        List<Estudiante> studentsToFind = new List<Estudiante>();
+        Console.Clear();
+        Console.WriteLine("Ingrese la Edad del Estudiante a Buscar");
+        byte age = Convert.ToByte(Console.ReadLine());
+        estudiantes.ForEach(st => {
+            if (st.Edad == age)
+            {
+                studentsToFind.Add(st);
+            }
+        });
+        if (studentsToFind.Count > 0)
+        {
+            studentsToFind.ForEach(st => {
+                Console.WriteLine("Codigo: {0}", st.Code);
+                Console.WriteLine("Nombre: {0}", st.Nombre);
+                Console.WriteLine("Edad: {0}", st.Edad);
+                Console.WriteLine("Direccion: {0}", st.Direccion);
+                Console.WriteLine("Quices: {0}", st.Quices);
+                Console.WriteLine("Trabajos: {0}", st.Trabajos);
+                Console.WriteLine("Parciales: {0}", st.Parciales);
+            });
+            Console.ReadKey();
+        }
+    }
+    }
 }

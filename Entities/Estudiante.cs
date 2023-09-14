@@ -248,7 +248,7 @@ namespace Boletin.Entities
                 MisFunciones.SaveData(estudiantes);
             }
         }
-        public void FindStudentid(List<Estudiante> estudiantes){
+        public void FindByCode(List<Estudiante> estudiantes){
         Console.Clear();
         Console.WriteLine("Ingrese el Codigo del Estudiante a Buscar");
         string id = Console.ReadLine();
@@ -266,7 +266,7 @@ namespace Boletin.Entities
             Console.ReadKey();
         }
     }
-    public void FindStudentName(List<Estudiante> estudiantes){
+    public void FindByName(List<Estudiante> estudiantes){
         Console.Clear();
         Console.WriteLine("Ingrese el Nombre del Estudiante a Buscar");
         string name = Console.ReadLine().ToUpper();
@@ -284,7 +284,7 @@ namespace Boletin.Entities
             Console.ReadKey();
         }
     }
-    public void FindStudentsAges(List<Estudiante> estudiantes){
+    public void FindByAge(List<Estudiante> estudiantes){
         List<Estudiante> studentsToFind = new List<Estudiante>();
         Console.Clear();
         Console.WriteLine("Ingrese la Edad del Estudiante a Buscar");

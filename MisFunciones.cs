@@ -36,6 +36,17 @@ public class MisFunciones
         Console.Write("Opcion: ");
         return Convert.ToByte(Console.ReadLine());
     }
+    public static byte Find()
+    {
+        Console.Clear();
+        Console.WriteLine("BUSCAR ALUMNO");
+        Console.WriteLine("1. Buscar por codigo");
+        Console.WriteLine("2. Buscar por nombre");
+        Console.WriteLine("0. Buscar por edad");
+        Console.WriteLine("0. Regresar al menu principal");
+        Console.Write("Opcion: ");
+        return Convert.ToByte(Console.ReadLine());
+    }
     public static void SaveData(List<Estudiante> lstListado)
     {
         string json = JsonConvert.SerializeObject(lstListado, Formatting.Indented);

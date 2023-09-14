@@ -58,7 +58,7 @@ namespace Boletin.Entities
                 Console.Write("Ingrese La Edad: ");
             }
             Console.Write("Ingrese La Direccion: ");
-            estudiante.Direccion = Console.ReadLine();
+            estudiante.Direccion = Console.ReadLine().ToUpper();
             estudiante.Quices = new List<float>();
             estudiante.Trabajos = new List<float>();
             estudiante.Parciales = new List<float>();
@@ -132,9 +132,9 @@ namespace Boletin.Entities
             if (studentToEdit != null)
             {
                 Console.WriteLine("Ingrese el tipo de nota a modificar");
-                Console.WriteLine("1. Quiz\n2. Trabajo\n3. Parcial\n0. Salir");
                 Console.WriteLine("Ingrese la nueva nota");
                 float nota = float.Parse(Console.ReadLine());
+                Console.WriteLine("1. Quiz\n2. Trabajo\n3. Parcial\n0. Salir");
                 byte opcion = Convert.ToByte(Console.ReadLine());
                 switch (opcion)
                 {
@@ -260,9 +260,6 @@ namespace Boletin.Entities
             Console.WriteLine("Nombre: {0}", studentToFind.Nombre);
             Console.WriteLine("Edad: {0}", studentToFind.Edad);
             Console.WriteLine("Direccion: {0}", studentToFind.Direccion);
-            Console.WriteLine("Quices: {0}", studentToFind.Quices);
-            Console.WriteLine("Trabajos: {0}", studentToFind.Trabajos);
-            Console.WriteLine("Parciales: {0}", studentToFind.Parciales);
             Console.ReadKey();
         }
     }
@@ -277,10 +274,7 @@ namespace Boletin.Entities
             Console.WriteLine("Codigo: {0}", studentToFind.Code);
             Console.WriteLine("Nombre: {0}", studentToFind.Nombre);
             Console.WriteLine("Edad: {0}", studentToFind.Edad);
-            Console.WriteLine("Direccion: {0}", studentToFind.Direccion);
-            Console.WriteLine("Quices: {0}", studentToFind.Quices);
-            Console.WriteLine("Trabajos: {0}", studentToFind.Trabajos);
-            Console.WriteLine("Parciales: {0}", studentToFind.Parciales);
+            Console.WriteLine("Direccion: {0}", studentToFind.Direccion);;
             Console.ReadKey();
         }
     }
@@ -291,6 +285,28 @@ namespace Boletin.Entities
         byte age = Convert.ToByte(Console.ReadLine());
         estudiantes.ForEach(st => {
             if (st.Edad == age)
+            {
+                studentsToFind.Add(st);
+            }
+        });
+        if (studentsToFind.Count > 0)
+        {
+            studentsToFind.ForEach(st => {
+                Console.WriteLine("Codigo: {0}", st.Code);
+                Console.WriteLine("Nombre: {0}", st.Nombre);
+                Console.WriteLine("Edad: {0}", st.Edad);
+                Console.WriteLine("Direccion: {0}", st.Direccion);;
+            });
+            Console.ReadKey();
+        }
+    }
+    public void FindByAddres(List<Estudiante> estudiantes){
+        List<Estudiante> studentsToFind = new List<Estudiante>();
+        Console.Clear();
+        Console.WriteLine("Ingrese la Direccion del Estudiante a Buscar");
+        string address = Console.ReadLine().ToUpper();
+        estudiantes.ForEach(st => {
+            if (st.Direccion == address)
             {
                 studentsToFind.Add(st);
             }

@@ -94,6 +94,11 @@ internal class Program
                                 Console.Clear();
                                 student.FindByAge(estudiantes);
                                 break;
+                            case 4:
+                                Console.Clear();
+                                student.FindByAddres(estudiantes);
+                                Console.ReadKey();
+                                break;
                             case 0:
                                 Console.Clear();
                                 cicloBuscar = false;

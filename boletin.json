@@ -1,41 +1,12 @@
 [
   {
-    "Code": "123",
-    "Nombre": "Daniel",
-    "Direccion": "Calle",
-    "Edad": 25,
-    "Quices": [
-      2.5,
-      3.5,
-      4.8
-    ],
-    "Trabajos": [
-      4.5,
-      2.9
-    ],
-    "Parciales": [
-      4.2,
-      2.2,
-      2.9
-    ]
-  },
-  {
-    "Code": "1096701029",
-    "Nombre": "DANIEL CARLOS",
-    "Direccion": "Calle 15",
+    "Code": "1096",
+    "Nombre": "CARLOS",
+    "Direccion": "CALLE 32",
     "Edad": 0,
     "Quices": [
-      2.5
+      5.0
     ],
-    "Trabajos": [],
-    "Parciales": []
-  },
-  {
-    "Code": "1456",
-    "Nombre": "JUAN",
-    "Direccion": "calle",
-    "Edad": 0,
-    "Quices": [],
     "Trabajos": [],
     "Parciales": []
   }

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eo11hS4xqkF8ncZz0Utxpymr3miPW2tM2ewvPCQHkvz6XnVnfPmC1RqhX99mcXvW5ZLUVOVjtZ+5mNkbkCwc0w==",
+  "dgSpecHash": "6fIeOTztzZ1YGW1Ht4wlw0JtfoRbSHNOvjzBq52Sn3m3c4h/gWyXl4ioK8qoVnZAuWTHj5ZLA5DzbtT+VatKHQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sobri\\Documents\\Ejer01CSharpRemaster\\Boletin.csproj",
+  "projectFilePath": "/workspaces/Ejer01CSharpRemaster/Boletin.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\sobri\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "/home/codespace/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

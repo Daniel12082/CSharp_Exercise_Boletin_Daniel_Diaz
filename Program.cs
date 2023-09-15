@@ -1,6 +1,5 @@
 ﻿using Boletin;
 using Boletin.Entities;
-
 internal class Program
 {
     private static void Main(string[] args)

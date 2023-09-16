@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Permissions;
@@ -93,15 +94,18 @@ namespace Boletin.Entities
             {
                 case 1:
                     Console.WriteLine("Quiz Nro {0}: ", (alumno.Quices.Count + 1));
-                    alumno.Quices.Add(float.Parse(Console.ReadLine()));
+                    float notaq = LeerNotaValidada();
+                    alumno.Quices.Add(notaq);
                     break;
                 case 2:
                     Console.WriteLine("Trabajo Nro {0}: ", (alumno.Trabajos.Count + 1));
-                    alumno.Trabajos.Add(float.Parse(Console.ReadLine()));
+                    float notat = LeerNotaValidada();
+                    alumno.Trabajos.Add(notat);
                     break;
                 case 3:
                     Console.WriteLine("Parcial Nro {0}: ", (alumno.Parciales.Count + 1));
-                    alumno.Parciales.Add(float.Parse(Console.ReadLine()));
+                    float notap = LeerNotaValidada();
+                    alumno.Parciales.Add(notap);
                     break;
                 default:
                     Console.WriteLine("Opcion no valida");
@@ -111,6 +115,7 @@ namespace Boletin.Entities
             int idx = estudiantes.FindIndex(p => p.Code.Equals(studenCode));
             estudiantes[idx] = alumno;
         }
+        
         public void RemoveItem(List<Estudiante> estudiantes){
             Console.Clear();
             Console.WriteLine("Ingrese el Codigo del Estudiante a Eliminar");
@@ -121,6 +126,23 @@ namespace Boletin.Entities
             {
                 estudiantes.Remove(studentToRemove);
                 MisFunciones.SaveData(estudiantes);
+            }
+        }
+        public float LeerNotaValidada()
+        {
+            float nota;
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (float.TryParse(input, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out nota)
+                    && nota >= 0.0f && nota <= 5.0f)
+                {
+                    return nota;
+                }
+                else
+                {
+                    Console.WriteLine("Por favor, ingrese una nota válida en el rango de 0.0 a 5.0: ");
+                }
             }
         }
         public void EditGrades(List<Estudiante> estudiantes){

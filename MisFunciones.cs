@@ -101,29 +101,6 @@ public class MisFunciones
         paginaActual++;
         }
     }
-    public static float ValidarFormatoNotas(List<float> notas, int cantidad)
-    {
-        for (int i = 0; i < cantidad; i++)
-        {
-            float nota = 0.0f;
-            bool notaValida = false;
-            while (!notaValida)
-            {
-                Console.Write("Ingrese la nota {0} del estudiante: ", i + 1);
-                notaValida = float.TryParse(Console.ReadLine(), out nota);
-                if (!notaValida)
-                {
-                    Console.WriteLine("La nota debe ser un numero decimal.");
-                }
-                else if (nota < 0.0f || nota > 5.0f)
-                {
-                    Console.WriteLine("La nota debe estar entre 0.0 y 5.0.");
-                    notaValida = false;
-                }
-            }
-            return nota;
-        }
-    }
     public static void ImprimirNotasDeLista(string tipo, List<float> notas, int cantidad)
     {
         for (int i = 0; i < cantidad; i++)
